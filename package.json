@@ -1,0 +1,22 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "Brain Games - first project on Hexlet",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "./src/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemProvornyy/frontend-project-lvl1.git"
+  },
+  "author": "Artem Provornyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtemProvornyy/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/ArtemProvornyy/frontend-project-lvl1#readme"
+}

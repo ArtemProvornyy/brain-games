@@ -26,3 +26,10 @@ brain-even
 
 [![asciicast](https://asciinema.org/a/286347.svg)](https://asciinema.org/a/286347)
 
+Second game is Brain Calc. This game invites you to calculate the result of expression. The rules are the same.
+Command to start the Brain Calc:
+```
+brain-calc
+```
+
+[![asciicast](https://asciinema.org/a/286995.svg)](https://asciinema.org/a/286995)

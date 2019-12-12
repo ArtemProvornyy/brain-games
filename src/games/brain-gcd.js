@@ -7,39 +7,27 @@ import {
   isCorrectAnswer,
 } from '..';
 
-const genRandomOperation = (amountOfOperations) => {
-  const operationNumber = genRandomInt(amountOfOperations);
+const getGCD = (a, b) => {
+  if (a === 0) return b;
+  if (b === 0) return a;
 
-  switch (operationNumber) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    case 2:
-      return '*';
-    default:
-      return null;
-  }
-};
+  const iter = (devider) => {
+    if (a % devider === 0 && b % devider === 0) {
+      return devider;
+    }
 
-const getResultOfExtention = (a, b, operation) => {
-  switch (operation) {
-    case '+':
-      return a + b;
-    case '-':
-      return a - b;
-    case '*':
-      return a * b;
-    default:
-      return null;
-  }
+    return iter(devider - 1);
+  };
+
+  const smallerNumber = a < b ? a : b;
+
+  return iter(smallerNumber);
 };
 
 export default (maxAttemptsNumber) => {
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
   const maxRandomInt = 100;
-  const maxRandomOperations = 3;
 
   const iter = (attempt) => {
     if (attempt === maxAttemptsNumber) {
@@ -49,10 +37,9 @@ export default (maxAttemptsNumber) => {
 
     const firstNum = genRandomInt(maxRandomInt);
     const secondNum = genRandomInt(maxRandomInt);
-    const operation = genRandomOperation(maxRandomOperations);
 
-    const correctAnswer = getResultOfExtention(firstNum, secondNum, operation);
-    const questionContent = `${firstNum} ${operation} ${secondNum}`;
+    const correctAnswer = getGCD(firstNum, secondNum);
+    const questionContent = `${firstNum} ${secondNum}`;
     const question = buildQuestion(questionContent);
 
     getQuestion(question);

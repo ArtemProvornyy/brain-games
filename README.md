@@ -33,3 +33,10 @@ brain-calc
 ```
 
 [![asciicast](https://asciinema.org/a/286995.svg)](https://asciinema.org/a/286995)
+
+Third game is Brain GCD. You must find the greatest common divisor of given numbers.
+```
+brain-gcd
+```
+
+[![asciicast](https://asciinema.org/a/287567.svg)](https://asciinema.org/a/287567)

@@ -33,6 +33,8 @@ brain-even
 
 [![asciicast](https://asciinema.org/a/286347.svg)](https://asciinema.org/a/286347)
 
+**[&#11014; back to top](#games)**
+
 ### Brain Calc
 Second game is Brain Calc. This game invites you to calculate the result of expression. The rules are the same.
 Command to start the Brain Calc:
@@ -42,6 +44,8 @@ brain-calc
 
 [![asciicast](https://asciinema.org/a/286995.svg)](https://asciinema.org/a/286995)
 
+**[&#11014; back to top](#games)**
+
 ### Brain GCD
 Third game is Brain GCD. You must find the greatest common divisor of given numbers.
 ```
@@ -49,6 +53,8 @@ brain-gcd
 ```
 
 [![asciicast](https://asciinema.org/a/287567.svg)](https://asciinema.org/a/287567)
+
+**[&#11014; back to top](#games)**
 
 ### Brain Progression
 Fourth game is Brain Progression. You must enter a missing number in the progression.
@@ -58,6 +64,8 @@ brain-progression
 
 [![asciicast](https://asciinema.org/a/287848.svg)](https://asciinema.org/a/287848)
 
+**[&#11014; back to top](#games)**
+
 ### Brain Prime
 The last game in this programm is Brain Prime. This game invites you to spot if the number is prime.
 ```
@@ -65,3 +73,5 @@ brain-prime
 ```
 
 [![asciicast](https://asciinema.org/a/287896.svg)](https://asciinema.org/a/287896)
+
+**[&#11014; back to top](#games)**

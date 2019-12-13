@@ -40,3 +40,10 @@ brain-gcd
 ```
 
 [![asciicast](https://asciinema.org/a/287567.svg)](https://asciinema.org/a/287567)
+
+Fourth game is Brain Progression. You must enter a missing number in the progression.
+```
+brain-progression
+```
+
+[![asciicast](https://asciinema.org/a/287848.svg)](https://asciinema.org/a/287848)

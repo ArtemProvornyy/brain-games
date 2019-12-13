@@ -48,7 +48,7 @@ export default (maxAttemptsNumber) => {
     const question = buildQuestion(questionContent);
 
     getQuestion(question);
-    const answer = getAnswer(question);
+    const answer = Number(getAnswer(question));
 
     isCorrectAnswer(userName, answer, correctAnswer);
 

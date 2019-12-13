@@ -20,7 +20,7 @@ export const genRandomInt = (max) => Math.floor(Math.random() * Math.floor(max))
 export const buildQuestion = (questionContent) => makeQuestion(readlineSync.question(`Question: ${questionContent}`), readlineSync.question('Your answer: '));
 
 export const isCorrectAnswer = (name, answer, correctAnswer) => {
-  if (Number(answer) === Number(correctAnswer)) {
+  if (answer === correctAnswer) {
     console.log('Correct!');
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);

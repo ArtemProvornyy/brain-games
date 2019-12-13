@@ -47,3 +47,10 @@ brain-progression
 ```
 
 [![asciicast](https://asciinema.org/a/287848.svg)](https://asciinema.org/a/287848)
+
+The last game in this programm is Brain Prime. This game invites you to spot if the number is prime.
+```
+brain-prime
+```
+
+

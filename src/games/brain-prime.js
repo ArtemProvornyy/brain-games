@@ -7,21 +7,19 @@ import {
   isCorrectAnswer,
 } from '..';
 
-const getGCD = (a, b) => {
-  if (a === 0) return b;
-  if (b === 0) return a;
-
-  const iter = (devider) => {
-    if (a % devider === 0 && b % devider === 0) {
-      return devider;
+const isPrime = (num) => {
+  const iter = (counter) => {
+    if (counter === num) {
+      return 'yes';
+    }
+    if (num % counter === 0) {
+      return 'no';
     }
 
-    return iter(devider - 1);
+    return iter(counter + 1);
   };
 
-  const smallerNumber = a < b ? a : b;
-
-  return iter(smallerNumber);
+  return iter(2);
 };
 
 export default (maxAttemptsNumber) => {
@@ -35,15 +33,14 @@ export default (maxAttemptsNumber) => {
       process.exit();
     }
 
-    const firstNum = genRandomInt(maxRandomInt);
-    const secondNum = genRandomInt(maxRandomInt);
+    const number = genRandomInt(maxRandomInt);
 
-    const correctAnswer = getGCD(firstNum, secondNum);
-    const questionContent = `${firstNum} ${secondNum}`;
+    const correctAnswer = isPrime(number);
+    const questionContent = number;
     const question = buildQuestion(questionContent);
 
     getQuestion(question);
-    const answer = Number(getAnswer(question));
+    const answer = getAnswer(question);
 
     isCorrectAnswer(userName, answer, correctAnswer);
 

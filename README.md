@@ -12,13 +12,12 @@ npm link
 [![asciicast](https://asciinema.org/a/287905.svg)](https://asciinema.org/a/287905)
 
 ## Games
-* [Brain Even](#brain-even)
-* [Brain Calc](#brain-calc)
-* [Brain GCD](#brain-gcd)
-* [Brain Progression](#brain-progression)
-* [Brain Prime](#brain-prime)
+1. [Brain Even](#brain-even)
+1. [Brain Calc](#brain-calc)
+1. [Brain GCD](#brain-gcd)
+1. [Brain Progression](#brain-progression)
+1. [Brain Prime](#brain-prime)
 
-## Commands
 Following command welcome you and asks for your name.
 ```
 brain-games

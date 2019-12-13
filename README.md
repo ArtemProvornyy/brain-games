@@ -53,4 +53,4 @@ The last game in this programm is Brain Prime. This game invites you to spot if 
 brain-prime
 ```
 
-
+[![asciicast](https://asciinema.org/a/287896.svg)](https://asciinema.org/a/287896)

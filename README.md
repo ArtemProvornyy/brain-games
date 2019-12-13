@@ -9,7 +9,7 @@ CLI utility to growth your logical thinking.
 npm link
 ```
 
-[![asciicast](https://asciinema.org/a/286333.svg)](https://asciinema.org/a/286333)
+[![asciicast](https://asciinema.org/a/287905.svg)](https://asciinema.org/a/287905)
 
 ## Commands
 Following command welcome you and asks for your name.

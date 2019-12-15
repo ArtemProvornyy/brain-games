@@ -76,6 +76,8 @@ brain-prime
 
 **[&#11014; back to top](#games)**
 
+## Error message
+
 If you are mistaken in any one of these games, you got the following message:
 
 [![asciicast](https://asciinema.org/a/288347.svg)](https://asciinema.org/a/288347)

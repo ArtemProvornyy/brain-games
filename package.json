@@ -1,8 +1,18 @@
 {
   "name": "brain-games",
   "version": "1.0.7",
-  "description": "Brain Games - first project on Hexlet",
-  "main": "index.js",
+  "description": "CLI utility to growth your logical thinking.",
+  "keywords": [
+    "brain",
+    "games",
+    "cli",
+    "even",
+    "calculate",
+    "gcd",
+    "progression",
+    "prime"
+  ],
+  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",

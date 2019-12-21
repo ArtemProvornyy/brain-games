@@ -8,8 +8,6 @@ export const makeQuestion = (question, answer) => cons(question, answer);
 export const getQuestion = (question) => car(question);
 export const getAnswer = (question) => cdr(question);
 
-export const getWelcomeString = () => console.log('\nWelcome to the Brain Games!');
-
 export const getUserName = () => {
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!`);

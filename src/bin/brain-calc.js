@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 import brainCalc from '../games/brain-calc';
-import { getWelcomeString, maxAttemptsNumber } from '..';
 
-getWelcomeString();
+console.log('\nWelcome to the Brain Games!');
 console.log('What is the result of the expression?');
-brainCalc(maxAttemptsNumber);
+brainCalc();

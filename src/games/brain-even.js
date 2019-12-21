@@ -9,7 +9,7 @@ import {
 
 const isEven = (n) => (n % 2 === 0 ? 'yes' : 'no');
 
-export default (maxAttemptsNumber) => {
+export default (maxAttemptsNumber = 3) => {
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
   const maxRandomInt = 100;

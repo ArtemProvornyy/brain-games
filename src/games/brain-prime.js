@@ -22,7 +22,7 @@ const isPrime = (num) => {
   return iter(2);
 };
 
-export default (maxAttemptsNumber) => {
+export default (maxAttemptsNumber = 3) => {
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
   const maxRandomInt = 100;

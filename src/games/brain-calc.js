@@ -1,10 +1,6 @@
-import readlineSync from 'readline-sync';
 import {
   genRandomInt,
-  getQuestion,
-  getAnswer,
-  buildQuestion,
-  isCorrectAnswer,
+  makeGame,
 } from '..';
 
 const genRandomOperation = (amountOfOperations) => {
@@ -35,32 +31,17 @@ const getResultOfExtention = (a, b, operation) => {
   }
 };
 
-export default (maxAttemptsNumber = 3) => {
-  const userName = readlineSync.question('\nMay I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
+export default () => {
+  const maxAttemptsNumber = 3;
   const maxRandomInt = 100;
   const maxRandomOperations = 3;
 
-  const iter = (attempt) => {
-    if (attempt === maxAttemptsNumber) {
-      console.log(`Congratulations, ${userName}!`);
-      process.exit();
-    }
+  const firstNum = genRandomInt(maxRandomInt);
+  const secondNum = genRandomInt(maxRandomInt);
+  const operation = genRandomOperation(maxRandomOperations);
 
-    const firstNum = genRandomInt(maxRandomInt);
-    const secondNum = genRandomInt(maxRandomInt);
-    const operation = genRandomOperation(maxRandomOperations);
+  const correctAnswer = getResultOfExtention(firstNum, secondNum, operation);
+  const questionContent = `${firstNum} ${operation} ${secondNum}`;
 
-    const correctAnswer = getResultOfExtention(firstNum, secondNum, operation);
-    const questionContent = `${firstNum} ${operation} ${secondNum}`;
-    const question = buildQuestion(questionContent);
-
-    getQuestion(question);
-    const answer = Number(getAnswer(question));
-
-    isCorrectAnswer(userName, answer, correctAnswer);
-
-    return iter(attempt + 1);
-  };
-  return iter(0);
+  return makeGame(questionContent, correctAnswer, maxAttemptsNumber);
 };

@@ -25,8 +25,9 @@ export const makeGame = (questionPair, maxAttemptsNumber = 3) => {
       process.exit();
     }
 
-    const questionContent = getQuestion(questionPair);
-    const correctAnswer = getAnswer(questionPair);
+    const newQuestion = questionPair();
+    const questionContent = getQuestion(newQuestion);
+    const correctAnswer = getAnswer(newQuestion);
 
     const question = buildQuestion(questionContent);
 

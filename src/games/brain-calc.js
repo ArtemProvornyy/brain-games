@@ -46,4 +46,4 @@ const getGameData = () => {
   return makeQuestion(questionContent, correctAnswer);
 };
 
-export default () => makeGame(getGameData());
+export default () => makeGame(getGameData);

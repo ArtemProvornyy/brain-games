@@ -1,6 +1,7 @@
 import {
   genRandomInt,
   makeGame,
+  makeQuestion,
 } from '..';
 
 const genRandomOperation = (amountOfOperations) => {
@@ -31,8 +32,7 @@ const getResultOfExtention = (a, b, operation) => {
   }
 };
 
-export default () => {
-  const maxAttemptsNumber = 3;
+const getGameData = () => {
   const maxRandomInt = 100;
   const maxRandomOperations = 3;
 
@@ -43,5 +43,7 @@ export default () => {
   const correctAnswer = getResultOfExtention(firstNum, secondNum, operation);
   const questionContent = `${firstNum} ${operation} ${secondNum}`;
 
-  return makeGame(questionContent, correctAnswer, maxAttemptsNumber);
+  return makeQuestion(questionContent, correctAnswer);
 };
+
+export default () => makeGame(getGameData());

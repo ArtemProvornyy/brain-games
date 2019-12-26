@@ -1,35 +1,18 @@
-import readlineSync from 'readline-sync';
 import {
   genRandomInt,
-  getQuestion,
-  getAnswer,
-  buildQuestion,
-  isCorrectAnswer,
+  makeQuestion,
+  makeGame,
 } from '..';
 
 const isEven = (n) => (n % 2 === 0 ? 'yes' : 'no');
 
-export default (maxAttemptsNumber = 3) => {
-  const userName = readlineSync.question('\nMay I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
+const getGameData = () => {
   const maxRandomInt = 100;
 
-  const iter = (attempt) => {
-    if (attempt === maxAttemptsNumber) {
-      console.log(`Congratulations, ${userName}!`);
-      process.exit();
-    }
+  const questionContent = genRandomInt(maxRandomInt);
+  const correctAnswer = isEven(questionContent);
 
-    const questionNumber = genRandomInt(maxRandomInt);
-    const correctAnswer = isEven(questionNumber);
-    const question = buildQuestion(questionNumber);
-
-    getQuestion(question);
-    const answer = getAnswer(question);
-
-    isCorrectAnswer(userName, answer, correctAnswer);
-
-    return iter(attempt + 1);
-  };
-  return iter(0);
+  return makeQuestion(questionContent, correctAnswer);
 };
+
+export default () => makeGame(getGameData);

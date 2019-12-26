@@ -1,11 +1,8 @@
-import readlineSync from 'readline-sync';
 import { cons, car, cdr } from '@hexlet/pairs';
 import {
   genRandomInt,
-  getQuestion,
-  getAnswer,
-  buildQuestion,
-  isCorrectAnswer,
+  makeQuestion,
+  makeGame,
 } from '..';
 
 const getProgression = (start, step) => {
@@ -25,34 +22,20 @@ const getProgression = (start, step) => {
     nextNum += step;
   }
 
-  return cons(progression, gapNum);
+  return cons(gapNum, progression);
 };
 
-export default (maxAttemptsNumber = 3) => {
-  const userName = readlineSync.question('\nMay I have your name? ');
-  console.log(`Hello, ${userName}!\n`);
+const getGameData = () => {
   const maxRandomInt = 100;
 
-  const iter = (attempt) => {
-    if (attempt === maxAttemptsNumber) {
-      console.log(`Congratulations, ${userName}!`);
-      process.exit();
-    }
+  const startProgression = genRandomInt(maxRandomInt);
+  const stepProgression = genRandomInt(maxRandomInt);
+  const progression = getProgression(startProgression, stepProgression);
 
-    const startProgression = genRandomInt(maxRandomInt);
-    const stepProgression = genRandomInt(maxRandomInt);
-    const progression = getProgression(startProgression, stepProgression);
+  const correctAnswer = car(progression);
+  const questionContent = cdr(progression);
 
-    const correctAnswer = cdr(progression);
-    const questionContent = car(progression);
-    const question = buildQuestion(questionContent);
-
-    getQuestion(question);
-    const answer = Number(getAnswer(question));
-
-    isCorrectAnswer(userName, answer, correctAnswer);
-
-    return iter(attempt + 1);
-  };
-  return iter(0);
+  return makeQuestion(questionContent, correctAnswer);
 };
+
+export default () => makeGame(getGameData);

@@ -15,7 +15,7 @@ export const genRandomInt = (max) => Math.floor(Math.random() * Math.floor(max))
 
 export const buildQuestion = (questionContent) => makeQuestion(readlineSync.question(`Question: ${questionContent}`), readlineSync.question('Your answer: '));
 
-export const makeGame = (questionPair, maxAttemptsNumber = 3) => {
+export const makeGame = (getGameDataFunc, maxAttemptsNumber = 3) => {
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
@@ -25,7 +25,7 @@ export const makeGame = (questionPair, maxAttemptsNumber = 3) => {
       process.exit();
     }
 
-    const newQuestion = questionPair();
+    const newQuestion = getGameDataFunc();
     const questionContent = getQuestion(newQuestion);
     const correctAnswer = getAnswer(newQuestion);
 
@@ -33,8 +33,9 @@ export const makeGame = (questionPair, maxAttemptsNumber = 3) => {
 
     getQuestion(question);
     const answer = getAnswer(question);
+    const isAnswerStr = correctAnswer === Number(correctAnswer) ? Number(answer) : answer;
 
-    if (Number(answer) === correctAnswer) {
+    if (isAnswerStr === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);

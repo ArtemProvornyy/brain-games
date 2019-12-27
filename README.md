@@ -9,7 +9,7 @@ CLI utility to growth your logical thinking.
 npm link
 ```
 
-[![asciicast](https://asciinema.org/a/287905.svg)](https://asciinema.org/a/287905)
+[![asciicast](https://asciinema.org/a/290520.svg)](https://asciinema.org/a/290520)
 
 ## Games
 1. [Brain Even](#brain-even)

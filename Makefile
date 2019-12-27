@@ -2,7 +2,7 @@ install:
 	sudo npm link
 
 start:
-	npx babel-node src/bin/brain-progression.js
+	npx babel-node src/bin/brain-even
 
 publish:
 	npm publish --dry-run

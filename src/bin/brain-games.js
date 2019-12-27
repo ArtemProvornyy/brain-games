@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getUserName, getWelcomeString } from '..';
+import { getUserName } from '..';
 
-getWelcomeString();
+console.log('\nWelcome to the Brain Games!');
 getUserName();

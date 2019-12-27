@@ -23,7 +23,7 @@ Following command welcome you and asks for your name.
 brain-games
 ```
 
-[![asciicast](https://asciinema.org/a/286344.svg)](https://asciinema.org/a/286344)
+[![asciicast](https://asciinema.org/a/290521.svg)](https://asciinema.org/a/290521)
 
 ### Brain Even
 First game in this program is Brain Even. It invites you to spot if the number is even. If your answers are true three times in a row you'r win. You can start the game with the following command.
@@ -31,7 +31,7 @@ First game in this program is Brain Even. It invites you to spot if the number i
 brain-even
 ```
 
-[![asciicast](https://asciinema.org/a/286347.svg)](https://asciinema.org/a/286347)
+[![asciicast](https://asciinema.org/a/290522.svg)](https://asciinema.org/a/290522)
 
 **[&#11014; back to top](#games)**
 
@@ -42,7 +42,7 @@ Command to start the Brain Calc:
 brain-calc
 ```
 
-[![asciicast](https://asciinema.org/a/286995.svg)](https://asciinema.org/a/286995)
+[![asciicast](https://asciinema.org/a/290523.svg)](https://asciinema.org/a/290523)
 
 **[&#11014; back to top](#games)**
 

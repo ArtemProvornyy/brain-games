@@ -1,6 +1,6 @@
 {
   "name": "brain-games",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "CLI utility to growth your logical thinking.",
   "keywords": [
     "brain",
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@hexlet/pairs": "^1.0.10",
+    "@hexlet/pairs-data": "^1.0.9",
     "readline-sync": "^1.4.10"
   }
 }

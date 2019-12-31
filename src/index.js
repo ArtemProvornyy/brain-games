@@ -1,10 +1,5 @@
 import readlineSync from 'readline-sync';
-import { cons, car, cdr } from '@hexlet/pairs';
-
-// Absrtaction Questions
-export const makeQuestion = (question, answer) => cons(question, answer);
-export const getQuestion = (question) => car(question);
-export const getAnswer = (question) => cdr(question);
+import { car, cdr } from '@hexlet/pairs';
 
 export const getUserName = () => {
   const userName = readlineSync.question('\nMay I have your name? ');
@@ -13,11 +8,13 @@ export const getUserName = () => {
 
 export const genRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
-export const buildQuestion = (questionContent) => makeQuestion(readlineSync.question(`Question: ${questionContent}`), readlineSync.question('Your answer: '));
-
-export const makeGame = (getGameDataFunc, maxAttemptsNumber = 3) => {
+export const makeGame = (getDescription, getGameData) => {
+  console.log('\nWelcome to the Brain Games!');
+  getDescription();
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
+
+  const maxAttemptsNumber = 3;
 
   const iter = (attempt) => {
     if (attempt === maxAttemptsNumber) {
@@ -25,14 +22,12 @@ export const makeGame = (getGameDataFunc, maxAttemptsNumber = 3) => {
       process.exit();
     }
 
-    const newQuestion = getGameDataFunc();
-    const questionContent = getQuestion(newQuestion);
-    const correctAnswer = getAnswer(newQuestion);
+    const newQuestion = getGameData();
+    const questionContent = car(newQuestion);
+    const correctAnswer = cdr(newQuestion);
 
-    const question = buildQuestion(questionContent);
-
-    getQuestion(question);
-    const answer = getAnswer(question);
+    readlineSync.question(`Question: ${questionContent}`);
+    const answer = readlineSync.question('Your answer: ');
     const isAnswerStr = correctAnswer === Number(correctAnswer) ? Number(answer) : answer;
 
     if (isAnswerStr === correctAnswer) {

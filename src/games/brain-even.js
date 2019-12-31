@@ -1,18 +1,19 @@
-import {
-  genRandomInt,
-  makeQuestion,
-  makeGame,
-} from '..';
+import { cons } from '@hexlet/pairs';
+import { genRandomInt, makeGame } from '..';
 
-const isEven = (n) => (n % 2 === 0 ? 'yes' : 'no');
+const isEven = (n) => n % 2 === 0;
 
 const getGameData = () => {
   const maxRandomInt = 100;
 
   const questionContent = genRandomInt(maxRandomInt);
-  const correctAnswer = isEven(questionContent);
+  const correctAnswer = isEven(questionContent) ? 'yes' : 'no';
 
-  return makeQuestion(questionContent, correctAnswer);
+  return cons(questionContent, correctAnswer);
 };
 
-export default () => makeGame(getGameData);
+export default () => {
+  const getDescription = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+  return makeGame(getDescription, getGameData);
+};

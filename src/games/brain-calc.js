@@ -1,22 +1,28 @@
 import {
-  genRandomInt,
-  makeGame,
-  makeQuestion,
-} from '..';
+  l,
+  length,
+  head,
+  tail,
+} from '@hexlet/pairs-data';
+import { cons } from '@hexlet/pairs';
+import { genRandomInt, makeGame } from '..';
 
-const genRandomOperation = (amountOfOperations) => {
+const operationsList = l('+', '-', '*');
+
+const genRandomOperation = (amountOfOperations, listOfOperations) => {
   const operationNumber = genRandomInt(amountOfOperations);
 
-  switch (operationNumber) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    case 2:
-      return '*';
-    default:
-      return null;
-  }
+  const iter = (counter, acc) => {
+    const operation = head(acc);
+
+    if (counter === operationNumber) {
+      return operation;
+    }
+
+    return iter(counter + 1, tail(acc));
+  };
+
+  return iter(0, listOfOperations);
 };
 
 const getResultOfExtention = (a, b, operation) => {
@@ -34,16 +40,20 @@ const getResultOfExtention = (a, b, operation) => {
 
 const getGameData = () => {
   const maxRandomInt = 100;
-  const maxRandomOperations = 3;
+  const maxRandomOperations = length(operationsList);
 
   const firstNum = genRandomInt(maxRandomInt);
   const secondNum = genRandomInt(maxRandomInt);
-  const operation = genRandomOperation(maxRandomOperations);
+  const operation = genRandomOperation(maxRandomOperations, operationsList);
 
   const correctAnswer = getResultOfExtention(firstNum, secondNum, operation);
   const questionContent = `${firstNum} ${operation} ${secondNum}`;
 
-  return makeQuestion(questionContent, correctAnswer);
+  return cons(questionContent, correctAnswer);
 };
 
-export default () => makeGame(getGameData);
+export default () => {
+  const getDescription = () => console.log('What is the result of the expression?');
+
+  return makeGame(getDescription, getGameData);
+};

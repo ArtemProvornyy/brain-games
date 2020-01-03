@@ -18,13 +18,6 @@ npm link
 1. [Brain Progression](#brain-progression)
 1. [Brain Prime](#brain-prime)
 
-Following command welcome you and asks for your name.
-```
-brain-games
-```
-
-[![asciicast](https://asciinema.org/a/290521.svg)](https://asciinema.org/a/290521)
-
 ### Brain Even
 First game in this program is Brain Even. It invites you to spot if the number is even. If your answers are true three times in a row you'r win. You can start the game with the following command.
 ```

@@ -3,11 +3,6 @@ import { car, cdr } from '@hexlet/pairs';
 
 export const maxRandomInt = 100;
 
-export const getUserName = () => {
-  const userName = readlineSync.question('\nMay I have your name? ');
-  console.log(`Hello, ${userName}!`);
-};
-
 export const genRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
 export const makeGame = (gameDescription, getGameData) => {

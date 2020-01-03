@@ -1,6 +1,6 @@
 {
   "name": "brain-games",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "CLI utility to growth your logical thinking.",
   "keywords": [
     "brain",
@@ -13,7 +13,6 @@
     "prime"
   ],
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",

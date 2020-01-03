@@ -2,7 +2,7 @@ import { cons, car, cdr } from '@hexlet/pairs';
 import { genRandomInt, makeGame, maxRandomInt } from '..';
 
 const getProgression = (start, step, length) => {
-  const gapIndex = genRandomInt(9);
+  const gapIndex = genRandomInt(length - 1);
   const gapNum = start + step * gapIndex;
 
   const iter = (counter, acc) => {

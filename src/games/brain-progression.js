@@ -1,5 +1,5 @@
 import { cons, car, cdr } from '@hexlet/pairs';
-import { genRandomInt, makeGame } from '..';
+import { genRandomInt, makeGame, maxRandomInt } from '..';
 
 const getProgression = (start, step, length) => {
   const gapIndex = genRandomInt(9);
@@ -23,8 +23,6 @@ const getProgression = (start, step, length) => {
 };
 
 const getGameData = () => {
-  const maxRandomInt = 100;
-
   const startProgression = genRandomInt(maxRandomInt);
   const stepProgression = genRandomInt(maxRandomInt);
   const progression = getProgression(startProgression, stepProgression, 10);
@@ -36,7 +34,7 @@ const getGameData = () => {
 };
 
 export default () => {
-  const getDescription = () => console.log('What number is missing in the progression?');
+  const gameDescription = 'What number is missing in the progression?';
 
-  return makeGame(getDescription, getGameData);
+  return makeGame(gameDescription, getGameData);
 };

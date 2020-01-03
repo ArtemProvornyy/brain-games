@@ -5,7 +5,7 @@ import {
   tail,
 } from '@hexlet/pairs-data';
 import { cons } from '@hexlet/pairs';
-import { genRandomInt, makeGame } from '..';
+import { genRandomInt, makeGame, maxRandomInt } from '..';
 
 const operationsList = l('+', '-', '*');
 
@@ -39,7 +39,6 @@ const getResultOfExtention = (a, b, operation) => {
 };
 
 const getGameData = () => {
-  const maxRandomInt = 100;
   const maxRandomOperations = length(operationsList);
 
   const firstNum = genRandomInt(maxRandomInt);
@@ -53,7 +52,7 @@ const getGameData = () => {
 };
 
 export default () => {
-  const getDescription = () => console.log('What is the result of the expression?');
+  const gameDescription = 'What is the result of the expression?';
 
-  return makeGame(getDescription, getGameData);
+  return makeGame(gameDescription, getGameData);
 };

@@ -10,9 +10,9 @@ export const getUserName = () => {
 
 export const genRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
-export const makeGame = (getDescription, getGameData) => {
+export const makeGame = (gameDescription, getGameData) => {
   console.log('\nWelcome to the Brain Games!');
-  getDescription();
+  console.log(gameDescription);
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 

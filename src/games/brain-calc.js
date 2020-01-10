@@ -1,6 +1,7 @@
 import { l, random as genRandomOperation } from '@hexlet/pairs-data';
 import { cons } from '@hexlet/pairs';
-import { genRandomInt, makeGame, maxRandomInt } from '..';
+import { makeGame, minRandomInt, maxRandomInt } from '..';
+import genRandomInt from '../utils';
 
 const operationsList = l('+', '-', '*');
 
@@ -18,14 +19,14 @@ const getResultOfExtention = (a, b, operation) => {
 };
 
 const getGameData = () => {
-  const firstNum = genRandomInt(maxRandomInt);
-  const secondNum = genRandomInt(maxRandomInt);
+  const firstNum = genRandomInt(minRandomInt, maxRandomInt);
+  const secondNum = genRandomInt(minRandomInt, maxRandomInt);
   const operation = genRandomOperation(operationsList);
 
   const correctAnswer = getResultOfExtention(firstNum, secondNum, operation);
   const questionContent = `${firstNum} ${operation} ${secondNum}`;
 
-  return cons(questionContent, correctAnswer);
+  return cons(questionContent, String(correctAnswer));
 };
 
 export default () => {

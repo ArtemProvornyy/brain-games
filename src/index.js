@@ -1,17 +1,16 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
+export const minRandomInt = 0;
 export const maxRandomInt = 100;
 
-export const genRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+const maxAttemptsNumber = 3;
 
 export const makeGame = (gameDescription, getGameData) => {
   console.log('\nWelcome to the Brain Games!');
   console.log(gameDescription);
   const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
-
-  const maxAttemptsNumber = 3;
 
   const iter = (attempt) => {
     if (attempt === maxAttemptsNumber) {
@@ -25,9 +24,8 @@ export const makeGame = (gameDescription, getGameData) => {
 
     readlineSync.question(`Question: ${questionContent}`);
     const answer = readlineSync.question('Your answer: ');
-    const isAnswerStr = correctAnswer === Number(correctAnswer) ? Number(answer) : answer;
 
-    if (isAnswerStr === correctAnswer) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
@@ -35,8 +33,8 @@ export const makeGame = (gameDescription, getGameData) => {
       process.exit();
     }
 
-    return iter(attempt + 1);
+    iter(attempt + 1);
   };
 
-  return iter(0);
+  iter(0);
 };

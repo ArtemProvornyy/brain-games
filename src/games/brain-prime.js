@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { genRandomInt, makeGame, maxRandomInt } from '..';
+import { makeGame, minRandomInt, maxRandomInt } from '..';
+import genRandomInt from '../utils';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -21,12 +22,12 @@ const isPrime = (num) => {
 };
 
 const getGameData = () => {
-  const number = genRandomInt(maxRandomInt);
+  const number = genRandomInt(minRandomInt, maxRandomInt);
 
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
   const questionContent = number;
 
-  return cons(questionContent, correctAnswer);
+  return cons(questionContent, String(correctAnswer));
 };
 
 export default () => {

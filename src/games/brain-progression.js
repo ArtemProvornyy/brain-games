@@ -1,13 +1,14 @@
-import { cons, car, cdr } from '@hexlet/pairs';
-import { genRandomInt, makeGame, maxRandomInt } from '..';
+/* eslint max-len: ["error", { "code": 115 }] */
+import { cons } from '@hexlet/pairs';
+import { makeGame, minRandomInt, maxRandomInt } from '..';
+import genRandomInt from '../utils';
 
-const getProgression = (start, step, length) => {
-  const gapIndex = genRandomInt(length - 1);
-  const gapNum = start + step * gapIndex;
+const progressionLength = 10;
 
+const getProgression = (start, step, length, gapIndex) => {
   const iter = (counter, acc) => {
     if (counter >= length) {
-      return cons(gapNum, acc);
+      return acc;
     }
 
     const space = counter === 0 ? '' : ' ';
@@ -22,15 +23,17 @@ const getProgression = (start, step, length) => {
   return iter(0, '');
 };
 
+const getGapNum = (startProgression, stepProgression, gapIndex) => (startProgression + stepProgression * gapIndex);
+
 const getGameData = () => {
-  const startProgression = genRandomInt(maxRandomInt);
-  const stepProgression = genRandomInt(maxRandomInt);
-  const progression = getProgression(startProgression, stepProgression, 10);
+  const startProgression = genRandomInt(minRandomInt, maxRandomInt);
+  const stepProgression = genRandomInt(minRandomInt, maxRandomInt);
+  const gapIndex = genRandomInt(minRandomInt, progressionLength);
 
-  const correctAnswer = car(progression);
-  const questionContent = cdr(progression);
+  const correctAnswer = getGapNum(startProgression, stepProgression, gapIndex);
+  const questionContent = getProgression(startProgression, stepProgression, progressionLength, gapIndex);
 
-  return cons(questionContent, correctAnswer);
+  return cons(questionContent, String(correctAnswer));
 };
 
 export default () => {

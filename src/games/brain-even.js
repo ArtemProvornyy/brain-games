@@ -1,10 +1,11 @@
 import { cons } from '@hexlet/pairs';
-import { genRandomInt, makeGame, maxRandomInt } from '..';
+import { makeGame, minRandomInt, maxRandomInt } from '..';
+import genRandomInt from '../utils';
 
 const isEven = (n) => n % 2 === 0;
 
 const getGameData = () => {
-  const questionContent = genRandomInt(maxRandomInt);
+  const questionContent = genRandomInt(minRandomInt, maxRandomInt);
   const correctAnswer = isEven(questionContent) ? 'yes' : 'no';
 
   return cons(questionContent, correctAnswer);

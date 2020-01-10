@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { genRandomInt, makeGame, maxRandomInt } from '..';
+import { makeGame, minRandomInt, maxRandomInt } from '..';
+import genRandomInt from '../utils';
 
 const getGCD = (a, b) => {
   if (a === 0) return b;
@@ -19,13 +20,13 @@ const getGCD = (a, b) => {
 };
 
 const getGameData = () => {
-  const firstNum = genRandomInt(maxRandomInt);
-  const secondNum = genRandomInt(maxRandomInt);
+  const firstNum = genRandomInt(minRandomInt, maxRandomInt);
+  const secondNum = genRandomInt(minRandomInt, maxRandomInt);
 
   const correctAnswer = getGCD(firstNum, secondNum);
   const questionContent = `${firstNum} ${secondNum}`;
 
-  return cons(questionContent, correctAnswer);
+  return cons(questionContent, String(correctAnswer));
 };
 
 export default () => {

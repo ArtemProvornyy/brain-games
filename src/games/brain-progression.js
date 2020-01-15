@@ -13,8 +13,8 @@ const getProgression = (start, step, length, gapIndex) => {
     }
 
     const space = counter === 0 ? '' : ' ';
-    const nextNum = start + step * counter;
-    const numOrGap = counter === gapIndex ? '..' : nextNum;
+    const currentNum = start + step * counter;
+    const numOrGap = counter === gapIndex ? '..' : currentNum;
 
     const newAcc = `${acc}${space}${numOrGap}`;
 

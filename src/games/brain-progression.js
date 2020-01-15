@@ -6,7 +6,7 @@ import genRandomInt from '../utils';
 const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;
 
-const getProgression = (start, step, length, gapIndex) => {
+const getQuestionContent = (start, step, length, gapIndex) => {
   const iter = (counter, acc) => {
     if (counter >= length) {
       return acc;
@@ -32,7 +32,7 @@ const getGameData = () => {
   const gapIndex = genRandomInt(minRandomInt, progressionLength);
 
   const correctAnswer = getCorrectAnswer(startProgression, stepProgression, gapIndex);
-  const questionContent = getProgression(startProgression, stepProgression, progressionLength, gapIndex);
+  const questionContent = getQuestionContent(startProgression, stepProgression, progressionLength, gapIndex);
 
   return cons(questionContent, String(correctAnswer));
 };

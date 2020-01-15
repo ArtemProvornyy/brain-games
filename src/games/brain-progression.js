@@ -1,4 +1,4 @@
-/* eslint max-len: ["error", { "code": 115 }] */
+/* eslint max-len: ["error", { "code": 122 }] */
 import { cons } from '@hexlet/pairs';
 import { makeGame, minRandomInt, maxRandomInt } from '..';
 import genRandomInt from '../utils';
@@ -24,14 +24,14 @@ const getProgression = (start, step, length, gapIndex) => {
   return iter(0, '');
 };
 
-const getGapNum = (startProgression, stepProgression, gapIndex) => (startProgression + stepProgression * gapIndex);
+const getCorrectAnswer = (startProgression, stepProgression, gapIndex) => (startProgression + stepProgression * gapIndex);
 
 const getGameData = () => {
   const startProgression = genRandomInt(minRandomInt, maxRandomInt);
   const stepProgression = genRandomInt(minRandomInt, maxRandomInt);
   const gapIndex = genRandomInt(minRandomInt, progressionLength);
 
-  const correctAnswer = getGapNum(startProgression, stepProgression, gapIndex);
+  const correctAnswer = getCorrectAnswer(startProgression, stepProgression, gapIndex);
   const questionContent = getProgression(startProgression, stepProgression, progressionLength, gapIndex);
 
   return cons(questionContent, String(correctAnswer));

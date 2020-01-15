@@ -2,6 +2,8 @@ import { cons } from '@hexlet/pairs';
 import { makeGame, minRandomInt, maxRandomInt } from '..';
 import genRandomInt from '../utils';
 
+const gameDescription = 'Find the greatest common divisor of given numbers.';
+
 const getGCD = (a, b) => {
   if (a === 0) return b;
   if (b === 0) return a;
@@ -29,8 +31,4 @@ const getGameData = () => {
   return cons(questionContent, String(correctAnswer));
 };
 
-export default () => {
-  const gameDescription = 'Find the greatest common divisor of given numbers.';
-
-  return makeGame(gameDescription, getGameData);
-};
+export default () => makeGame(gameDescription, getGameData);

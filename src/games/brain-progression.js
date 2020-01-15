@@ -3,6 +3,7 @@ import { cons } from '@hexlet/pairs';
 import { makeGame, minRandomInt, maxRandomInt } from '..';
 import genRandomInt from '../utils';
 
+const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const getProgression = (start, step, length, gapIndex) => {
@@ -36,8 +37,4 @@ const getGameData = () => {
   return cons(questionContent, String(correctAnswer));
 };
 
-export default () => {
-  const gameDescription = 'What number is missing in the progression?';
-
-  return makeGame(gameDescription, getGameData);
-};
+export default () => makeGame(gameDescription, getGameData);

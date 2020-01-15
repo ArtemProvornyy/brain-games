@@ -3,6 +3,7 @@ import { cons } from '@hexlet/pairs';
 import { makeGame, minRandomInt, maxRandomInt } from '..';
 import genRandomInt from '../utils';
 
+const gameDescription = 'What is the result of the expression?';
 const operationsList = l('+', '-', '*');
 
 const getResultOfExtention = (a, b, operation) => {
@@ -29,8 +30,4 @@ const getGameData = () => {
   return cons(questionContent, String(correctAnswer));
 };
 
-export default () => {
-  const gameDescription = 'What is the result of the expression?';
-
-  return makeGame(gameDescription, getGameData);
-};
+export default () => makeGame(gameDescription, getGameData);

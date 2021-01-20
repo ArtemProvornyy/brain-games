@@ -36,6 +36,7 @@
   "bugs": {
     "url": "https://github.com/ArtemProvornyy/frontend-project-lvl1/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/ArtemProvornyy/frontend-project-lvl1#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.10",

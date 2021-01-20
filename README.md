@@ -5,8 +5,10 @@ CLI utility to growth your logical thinking.
 [![Build Status](https://travis-ci.org/ArtemProvornyy/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/ArtemProvornyy/frontend-project-lvl1)
 
 ## Installation
+Clone this repository and run:
 ```
-npm link
+make install
+make link
 ```
 
 [![asciicast](https://asciinema.org/a/290520.svg)](https://asciinema.org/a/290520)

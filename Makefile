@@ -1,5 +1,8 @@
 install:
-	sudo npm link
+	npm install
+
+link:
+	npm link
 
 start:
 	npx babel-node src/bin/brain-progression.js

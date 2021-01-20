@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { makeGame, minRandomInt, maxRandomInt } from '..';
-import genRandomInt from '../utils';
+import { makeGame, minRandomInt, maxRandomInt } from '../index.js';
+import genRandomInt from '../utils.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 

@@ -1,7 +1,7 @@
 /* eslint max-len: ["error", { "code": 122 }] */
 import { cons } from '@hexlet/pairs';
-import { makeGame, minRandomInt, maxRandomInt } from '..';
-import genRandomInt from '../utils';
+import { makeGame, minRandomInt, maxRandomInt } from '../index.js';
+import genRandomInt from '../utils.js';
 
 const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;

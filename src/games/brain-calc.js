@@ -1,7 +1,7 @@
 import { l, random as genRandomOperation } from '@hexlet/pairs-data';
 import { cons } from '@hexlet/pairs';
-import { makeGame, minRandomInt, maxRandomInt } from '..';
-import genRandomInt from '../utils';
+import { makeGame, minRandomInt, maxRandomInt } from '../index.js';
+import genRandomInt from '../utils.js';
 
 const gameDescription = 'What is the result of the expression?';
 const operationsList = l('+', '-', '*');

@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { makeGame, minRandomInt, maxRandomInt } from '..';
-import genRandomInt from '../utils';
+import { makeGame, minRandomInt, maxRandomInt } from '../index.js';
+import genRandomInt from '../utils.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 

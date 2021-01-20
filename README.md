@@ -1,4 +1,6 @@
 # Brain Games
+This program requires [node.js](https://nodejs.org/en/) (version 13.0 or higher).
+
 Simple CLI utility with 5 arithmetic games.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fd1f2f196b085f9f7788/maintainability)](https://codeclimate.com/github/ArtemProvornyy/frontend-project-lvl1/maintainability)
